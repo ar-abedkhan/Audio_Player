@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/music"
+    tools:context=".AudioClicked">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#86191818"
+        >
+
+
+        <com.chibde.visualizer.BarVisualizer
+            android:id="@+id/barvisualizer"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+        app:layout_constraintTop_toBottomOf="@id/barvisualizer"
+        android:id="@+id/selectedAudioName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:fontFamily="@font/berkshire_swash"
+        android:textColor="@color/black"
+        android:singleLine="true"
+        android:background="@color/white"
+        android:layout_margin="15dp"
+        android:text="This will show the music name"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textStyle="bold"
+
+       />
+
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/selectedAudioName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+       >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:background="@drawable/circle"
+                android:id="@+id/prevBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:paddingStart="1dp"
+                android:src="@android:drawable/ic_media_previous" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:text="Prev"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <!--        play or pause btn-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/pauseBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:id="@+id/pauseBtn"
+                      android:background="@drawable/circle"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/pause_btn" />
+
+                <TextView
+                    android:id="@+id/PauseText"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Paus"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/playBtnLayout"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:background="@drawable/circle"
+                    android:id="@+id/playBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/play_btn" />
+
+                <TextView
+                    android:id="@+id/playText"
+                    android:layout_width="45dp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Play"
+                    android:textSize="18dp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:background="@drawable/circle"
+                android:id="@+id/nextBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_media_next" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Next"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
